@@ -5,7 +5,6 @@ module.exports = {
       rootDir: [
         "apps/nextjs/",
         "apps/expo-rn/",
-        "packages/ui/",
         "packages/config/",
         "packages/tsconfig/",
       ],

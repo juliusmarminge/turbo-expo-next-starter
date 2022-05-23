@@ -1,4 +1,4 @@
-const withTM = require("next-transpile-modules")(["ui"]);
+const withTM = require("next-transpile-modules")(["@tens/api"]);
 
 module.exports = withTM({
   reactStrictMode: true,

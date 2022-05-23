@@ -1,0 +1,19 @@
+{
+  "name": "@tens/api",
+  "version": "0.0.0",
+  "author": "juliusmarminge",
+  "files": [
+    "src"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@trpc/next": "^9.23.6",
+    "@trpc/server": "^9.23.6",
+    "superjson": "^1.9.1",
+    "zod": "^3.17.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {}
+}

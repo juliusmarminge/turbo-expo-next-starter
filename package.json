@@ -1,5 +1,6 @@
 {
-  "name": "turbo-expo-next-starter",
+  "name": "tens",
+  "description": "turbo-expo-next-starter",
   "author": "juliusmarminge",
   "version": "0.0.0",
   "private": true,

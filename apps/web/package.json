@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@tens/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,18 +10,18 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
   },
   "dependencies": {
-    "ui": "*",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "@tens/api": "*"
   },
   "devDependencies": {
-    "config": "*",
-    "tsconfig": "*",
-    "eslint": "7.32.0",
-    "next-transpile-modules": "9.0.0",
     "@types/node": "^17.0.12",
     "@types/react": "17.0.37",
+    "@types/react-dom": "17.0.11",
+    "next-transpile-modules": "9.0.0",
+    "@tens/eslint-config-custom": "*",
+    "@tens/tsconfig": "*",
     "typescript": "^4.5.3"
   }
 }

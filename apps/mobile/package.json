@@ -1,5 +1,5 @@
 {
-  "name": "mobile",
+  "name": "@tens/mobile",
   "version": "0.0.0",
   "main": "src/_app.tsx",
   "scripts": {
@@ -20,7 +20,7 @@
     "react-native-web": "0.17.7"
   },
   "devDependencies": {
-    "tsconfig": "*",
+    "@tens/tsconfig": "*",
     "@babel/core": "^7.12.9",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.66.13",
