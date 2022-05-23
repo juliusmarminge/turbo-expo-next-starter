@@ -4,7 +4,11 @@ import { z } from "zod";
 export const postRouter = createRouter()
   .query("get-all", {
     async resolve({ ctx }) {
-      return await ctx.prisma.post.findMany();
+      return await ctx.prisma.post.findMany({
+        include: {
+          author: true,
+        },
+      });
     },
   })
   .query("get-by-id", {

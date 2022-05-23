@@ -1,23 +1,18 @@
 import type { NextPage } from "next";
 import { trpc } from "../utils/trpc";
-import UserListing from "../components/UserListing";
+import { PostListing } from "../components/PostListing";
 
 const HomePage: NextPage = () => {
-  const { data: users, isLoading } = trpc.useQuery(["user.get-all"]);
+  const { data: posts, isLoading } = trpc.useQuery(["post.get-all"]);
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (!users) {
-    return <div>Error fetching data...</div>;
-  }
-
   return (
     <div>
-      <h1>Users</h1>
-      {users.map((user) => (
-        <UserListing key={user.id} user={user} />
+      {posts?.map((post) => (
+        <PostListing key={post.id} post={post} />
       ))}
     </div>
   );
