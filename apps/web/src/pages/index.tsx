@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { trpc } from "../utils/trpc";
+import UserListing from "../components/UserListing";
 
 const HomePage: NextPage = () => {
   const { data: users, isLoading } = trpc.useQuery(["user.get-all"]);
@@ -16,7 +17,7 @@ const HomePage: NextPage = () => {
     <div>
       <h1>Users</h1>
       {users.map((user) => (
-        <div key={user.id}>{user.name}</div>
+        <UserListing key={user.id} user={user} />
       ))}
     </div>
   );

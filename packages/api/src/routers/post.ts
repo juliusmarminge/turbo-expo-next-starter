@@ -19,6 +19,18 @@ export const postRouter = createRouter()
       });
     },
   })
+  .query("get-by-author-id", {
+    input: z.object({
+      authorId: z.number().int(),
+    }),
+    async resolve({ input, ctx }) {
+      return await ctx.prisma.post.findMany({
+        where: {
+          authorId: input.authorId,
+        },
+      });
+    },
+  })
   .mutation("create", {
     input: z.object({
       authorId: z.number().int(),
