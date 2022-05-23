@@ -1,6 +1,6 @@
 import { withTRPC } from "@trpc/next";
 import { AppType } from "next/dist/shared/lib/utils";
-import type { AppRouter } from "backend";
+import type { AppRouter } from "api/src/routers";
 //import superjson from "superjson";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
@@ -25,7 +25,7 @@ export default withTRPC<AppRouter>({
      * @link https://trpc.io/docs/ssr
      */
     //const url = `${getBaseUrl()}/api/trpc`;
-    const url = "http://localhost:2021/trpc";
+    const url = "http://localhost:3000/api/trpc";
     return {
       url,
       //transformer: superjson,
