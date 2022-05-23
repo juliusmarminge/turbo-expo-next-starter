@@ -6,6 +6,10 @@
   "files": [
     "base.json",
     "nextjs.json",
+    "expojs.json",
     "react-library.json"
-  ]
+  ],
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf .turbo"
+  }
 }

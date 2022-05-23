@@ -3,7 +3,7 @@
  * https://github.com/Enricopv/turbo-boilerplate/blob/master/apps/xpo/metro.config.js
  **/
 
-const { getDefaultConfig } = require("@expo/metro-config");
+const { getDefaultConfig } = require("expo/metro-config");
 const path = require("path");
 const { readdirSync } = require("fs");
 const projectRoot = __dirname;
@@ -133,5 +133,7 @@ config.resolver.extraNodeModules = {
     "node_modules/@react-navigation/native-stack"
   ),
 };
+
+console.log(config);
 
 module.exports = config;
