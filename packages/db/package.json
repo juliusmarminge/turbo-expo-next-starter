@@ -5,6 +5,8 @@
     "index.ts"
   ],
   "scripts": {
+    "dev": "prisma studio",
+    "update": "prisma db push && prisma generate",
     "postinstall": "prisma generate"
   },
   "dependencies": {
