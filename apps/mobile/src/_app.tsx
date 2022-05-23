@@ -11,7 +11,7 @@ function App() {
   const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() =>
     trpc.createClient({
-      url: "http://localhost:2021/trpc",
+      url: "http://localhost:3000/api/trpc",
     })
   );
 
