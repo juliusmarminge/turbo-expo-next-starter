@@ -5,12 +5,14 @@
   "files": [
     "src"
   ],
-  "scripts": {},
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf .turbo"
+  },
   "dependencies": {
     "@trpc/next": "^9.23.6",
     "@trpc/server": "^9.23.6",
     "superjson": "^1.9.1",
-    "zod": "^3.17.0"
+    "zod": "^3.17.2"
   },
   "devDependencies": {
     "typescript": "^4.6.4"
