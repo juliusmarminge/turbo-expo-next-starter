@@ -1,16 +1,35 @@
-# Turborepo starter with Expo and tRPC
+# TENTS
 
-This is a minimal boilerplate to get started with Expo and tRPC in Turborepo.
+Turbo-Expo-Next-TRPC-Starter
+
+This is a starter repo to get started with Expo and tRPC in Turborepo.
+
+- Initially bootstrapped with `npx create-turbo`
+- Heavily inspired by [KATT/zART](https://github.com/katt/zart)
+- Got Expo working with [gunnnnii](https://github.com/gunnnnii/turbo-expo-trpc-starter)'s starter repo
+
+TODO:
+
+- Remove the dependency for yarn workspaces.
+  - I want this repo to support any package manager.
+- Simplify dependency tree
+  - I feel like some packages are magically imported without being listed as a dependency
+- Include [tailwind](https://tailwindcss.com)
 
 ## What's inside?
 
 This turborepo uses [Yarn](https://yarnpkg.com/) as a package manager. It includes the following packages/apps:
 
-### Apps and Packages
+### Apps
+
 - `apps/mobile`: a [`react-native`](https://reactnative.dev/) app using [`expo`](https://expo.dev/)
-- `services/backend`: a [`trpc`](https://trpc.io/) backend service
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `apps/web`: a [Nextjs](https://nextjs.org) app hosting the tRPC endpoints.
+
+### Packages
+
+- `packages/api`: a [`trpc`](https://trpc.io/) backend service exposing typesafe API endpoints
+- `packages/db`: a typesafe database using [Prisma](https://prisma.io).
+- `packages/config`: home for all the projects shared configurations, such as `eslint` and `tsconfig`.
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -20,37 +39,7 @@ This turborepo has some additional tools already setup for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
 - [Prettier](https://prettier.io) for code formatting
-
-## Setup
-
-The Expo app depends on a few things just like any other native app. Please make sure you have all the prerequisits for running an Expo app: https://docs.expo.dev/
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run build
-```
-
-### Develop
-
-To start the projects development servers just run
-```
-cd turbo-expo-repo
-yarn dev
-```
-
-Then you can run the app in another terminal tab
-```
-cd turbo-expo-repo
-// pick one:
-yarn ios
-yarn android
-```
 
 ### Remote Caching
 
