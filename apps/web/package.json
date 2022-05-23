@@ -9,22 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@trpc/client": "^9.23.6",
-    "@trpc/next": "^9.23.6",
-    "@trpc/react": "^9.23.6",
-    "@trpc/server": "^9.23.6",
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-query": "^3.39.0",
+    "@trpc/client": "^9.15.0",
+    "@trpc/next": "^9.15.0",
+    "@trpc/react": "^9.15.0",
+    "@trpc/server": "^9.15.0",
+    "next": "12.0.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-query": "^3.34.7",
     "zod": "^3.17.2"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
-    "@types/react": "18.0.9",
-    "@types/react-dom": "18.0.4",
-    "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6",
-    "typescript": "4.6.4"
+    "@types/react": "17.0.37",
+    "@types/react-dom": "17.0.37",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "12.0.4",
+    "typescript": "4.5.2"
   }
 }
