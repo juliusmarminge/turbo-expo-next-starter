@@ -1,17 +1,19 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView, FlatList, Text } from "react-native";
 import { trpc } from "../utils/trpc";
+import { PostListing } from "../components/PostListing";
 
-const Home = () => {
-  const { data, isLoading } = trpc.useQuery([
-    "hello.greeting",
-    { name: "World" },
-  ]);
+const HomeScreen = () => {
+  const { data, isLoading } = trpc.useQuery(["post.get-all"]);
 
   return (
     <SafeAreaView>
-      {isLoading ? <Text>Loading...</Text> : <Text>{data}</Text>}
+      <FlatList
+        data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <PostListing post={item} />}
+      />
     </SafeAreaView>
   );
 };
 
-export default Home;
+export default HomeScreen;
