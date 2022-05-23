@@ -1,4 +1,1 @@
-module.exports = {
-  root: true,
-  extends: ["custom"],
-};
+module.exports = require("config/eslint-preset");

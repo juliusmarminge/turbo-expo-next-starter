@@ -1,5 +1,6 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "turbo-expo-next-starter",
+  "author": "juliusmarminge",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -8,9 +9,10 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "dev": "turbo run dev --parallel --no-cache --continue",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
     "prettier": "latest",
