@@ -1,3 +1,8 @@
+/**
+ * Credit to Enrico Valbuena for this config file. Originally from his starter-repo:
+ * https://github.com/Enricopv/turbo-boilerplate/blob/master/apps/xpo/metro.config.js
+ **/
+
 const { getDefaultConfig } = require("@expo/metro-config");
 const path = require("path");
 const { readdirSync } = require("fs");
