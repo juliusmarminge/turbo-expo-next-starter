@@ -1,11 +1,29 @@
 import { registerRootComponent } from "expo";
-import IndexScreen from "./screens";
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { QueryClient, QueryClientProvider } from "react-query";
 
-export default function App() {
+import { trpc } from "./utils/trpc";
+import Home from "./screens/Home";
+
+function App() {
+  const [queryClient] = useState(() => new QueryClient());
+  const [trpcClient] = useState(() =>
+    trpc.createClient({
+      url: "http://localhost:2021/trpc",
+    })
+  );
+
   return (
-    <>
-      <IndexScreen />
-    </>
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <SafeAreaProvider>
+          <Home />
+          <StatusBar />
+        </SafeAreaProvider>
+      </QueryClientProvider>
+    </trpc.Provider>
   );
 }
 

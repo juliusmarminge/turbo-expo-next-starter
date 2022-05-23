@@ -1,28 +1,68 @@
 {
-  "name": "tens",
-  "description": "turbo-expo-next-starter",
-  "author": "juliusmarminge",
+  "name": "turborepo-basic-shared",
   "version": "0.0.0",
   "private": true,
   "workspaces": {
     "packages": [
       "apps/*",
-      "packages/*"
+      "packages/*",
+      "services/*"
+    ],
+    "nohoist": [
+      "**/@trpc/**/*",
+      "**/@trpc/**/*",
+      "**/react-query",
+      "**/react-native",
+      "**/react-native/**",
+      "**/@react-native-*",
+      "**/@react-native-*/**",
+      "**/react-native-*",
+      "**/react-native-*/**",
+      "**/*react-navigation/**",
+      "**/expo",
+      "**/expo/**",
+      "**/@expo",
+      "**/@expo/**",
+      "**/expo-*",
+      "**/expo-*/**",
+      "**/metro-*",
+      "**/metro-*/**"
     ]
   },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "prettier": "latest",
+    "prettier": "^2.5.1",
     "turbo": "latest"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**",
+          ".next/**"
+        ]
+      },
+      "lint": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      }
+    }
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
+  },
+  "resolutions": {
+    "react-devtools-core": "4.12.4"
   }
 }

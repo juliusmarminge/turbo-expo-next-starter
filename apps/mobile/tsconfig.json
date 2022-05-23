@@ -1,5 +1,6 @@
 {
-  "extends": "@tens/tsconfig/expojs.json",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true
+  }
 }

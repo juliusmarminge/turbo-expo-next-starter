@@ -1,15 +1,11 @@
 {
-  "name": "@tens/tsconfig",
+  "name": "tsconfig",
   "version": "0.0.0",
   "private": true,
   "main": "index.js",
   "files": [
     "base.json",
     "nextjs.json",
-    "expojs.json",
     "react-library.json"
-  ],
-  "scripts": {
-    "clean": "rm -rf node_modules && rm -rf .turbo"
-  }
+  ]
 }
