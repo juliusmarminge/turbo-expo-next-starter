@@ -1,4 +1,4 @@
-import { createRouter } from "../create-router";
+import { createRouter } from "./context";
 import { z } from "zod";
 
 export const userRouter = createRouter()
@@ -9,7 +9,7 @@ export const userRouter = createRouter()
   })
   .query("get-by-id", {
     input: z.object({
-      id: z.number().int(),
+      id: z.string(),
     }),
     async resolve({ input, ctx }) {
       return await ctx.prisma.user.findFirst({

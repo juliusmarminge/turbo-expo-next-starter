@@ -1,4 +1,4 @@
-import { createRouter } from "../create-router";
+import { createRouter } from "./context";
 import { z } from "zod";
 
 export const postRouter = createRouter()
@@ -25,7 +25,7 @@ export const postRouter = createRouter()
   })
   .query("get-by-author-id", {
     input: z.object({
-      authorId: z.number().int(),
+      authorId: z.string(),
     }),
     async resolve({ input, ctx }) {
       return await ctx.prisma.post.findMany({
@@ -37,7 +37,7 @@ export const postRouter = createRouter()
   })
   .mutation("create", {
     input: z.object({
-      authorId: z.number().int(),
+      authorId: z.string(),
       title: z.string(),
       content: z.string(),
     }),

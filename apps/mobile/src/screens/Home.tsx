@@ -3,13 +3,15 @@ import { trpc } from "../utils/trpc";
 import { PostListing } from "../components/PostListing";
 
 const HomeScreen = () => {
-  const { data, isLoading } = trpc.useQuery(["post.get-all"]);
+  const { data: posts, isLoading } = trpc.useQuery(["post.get-all"]);
 
   return (
     <SafeAreaView>
+      <Text>Posts</Text>
+      {isLoading && <Text>Loading posts...</Text>}
       <FlatList
-        data={data}
-        keyExtractor={(item) => item.id}
+        data={posts}
+        keyExtractor={(post) => post.id}
         renderItem={({ item }) => <PostListing post={item} />}
       />
     </SafeAreaView>

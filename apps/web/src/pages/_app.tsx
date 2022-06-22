@@ -1,22 +1,23 @@
+// src/pages/_app.tsx
 import { withTRPC } from "@trpc/next";
-import { AppType } from "next/dist/shared/lib/utils";
 import type { AppRouter } from "api/src/routers";
+import type { AppType } from "next/dist/shared/lib/utils";
 //import superjson from "superjson";
+import "../styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  return (
-    <>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 };
 
-function getBaseUrl() {
+const getBaseUrl = () => {
+  if (typeof window !== "undefined") {
+    return "";
+  }
   if (process.browser) return ""; // Browser should use current path
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`; // SSR should use vercel url
 
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
-}
+};
 
 export default withTRPC<AppRouter>({
   config({ ctx }) {
@@ -24,8 +25,8 @@ export default withTRPC<AppRouter>({
      * If you want to use SSR, you need to use the server's full URL
      * @link https://trpc.io/docs/ssr
      */
-    //const url = `${getBaseUrl()}/api/trpc`;
-    const url = "http://localhost:3000/api/trpc";
+    const url = `${getBaseUrl()}/api/trpc`;
+
     return {
       url,
       //transformer: superjson,
