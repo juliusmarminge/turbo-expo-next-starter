@@ -1,51 +1,28 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "monotest",
   "version": "0.0.0",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "apps/*",
-      "packages/*",
-      "services/*"
-    ],
-    "nohoist": [
-      "**/@trpc/**/*",
-      "**/@trpc/**/*",
-      "**/react-query",
-      "**/react-native",
-      "**/react-native/**",
-      "**/@react-native-*",
-      "**/@react-native-*/**",
-      "**/react-native-*",
-      "**/react-native-*/**",
-      "**/*react-navigation/**",
-      "**/expo",
-      "**/expo/**",
-      "**/@expo",
-      "**/@expo/**",
-      "**/expo-*",
-      "**/expo-*/**",
-      "**/metro-*",
-      "**/metro-*/**"
-    ]
-  },
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "update-db": "cd packages/db && npm run update",
-    "clean": "find . -name node_modules -o -name .next -o -name .expo -o -name .turbo -type d -prune | xargs rm -rf"
+    "clean": "find . -name node_modules -o -name .next -o -name .expo -o -name .turbo -type d -prune | xargs rm -rf",
+    "postinstall": "prisma generate"
   },
   "devDependencies": {
-    "prettier": "^2.5.1",
-    "turbo": "latest"
+    "prettier": "latest",
+    "turbo": "latest",
+    "prisma": "^3.15.2"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "resolutions": {
-    "react-devtools-core": "4.12.4"
+  "dependencies": {
+    "@prisma/client": "^3.15.2"
   }
 }

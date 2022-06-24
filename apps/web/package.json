@@ -9,23 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@trpc/client": "^9.15.0",
-    "@trpc/next": "^9.15.0",
-    "@trpc/react": "^9.15.0",
-    "@trpc/server": "^9.15.0",
-    "next": "12.0.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-query": "^3.34.7",
-    "config": "*"
+    "@trpc/client": "^9.25.3",
+    "@trpc/next": "^9.25.3",
+    "@trpc/react": "^9.25.3",
+    "@trpc/server": "^9.25.3",
+    "next": "^12.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-query": "^3.39.1",
+    "superjson": "^1.9.1",
+    "zod": "^3.17.3"
   },
   "devDependencies": {
-    "@types/node": "17.0.35",
-    "@types/react": "17.0.17",
-    "@types/react-dom": "17.0.17",
-    "next-transpile-modules": "^9.0.0",
-    "eslint": "^7.32.0",
+    "@types/node": "18.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "autoprefixer": "^10.4.7",
     "eslint-config-next": "12.0.4",
-    "typescript": "4.5.2"
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4",
+    "typescript": "4.7.4"
   }
 }

@@ -3,9 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";
-
 import { trpc } from "./utils/trpc";
-import Home from "./screens/Home";
+import { HomeScreen } from "./screens/Home";
 
 function App() {
   const [queryClient] = useState(() => new QueryClient());
@@ -19,7 +18,7 @@ function App() {
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
         <SafeAreaProvider>
-          <Home />
+          <HomeScreen />
           <StatusBar />
         </SafeAreaProvider>
       </QueryClientProvider>

@@ -1,21 +1,14 @@
-import { SafeAreaView, FlatList, Text } from "react-native";
 import { trpc } from "../utils/trpc";
-import { PostListing } from "../components/PostListing";
+import { ExampleCreator, ExamplesView } from "../components/example";
+import { SafeAreaView, Text } from "react-native";
 
-const HomeScreen = () => {
-  const { data: posts, isLoading } = trpc.useQuery(["post.get-all"]);
-
+export const HomeScreen = () => {
   return (
     <SafeAreaView>
-      <Text>Posts</Text>
-      {isLoading && <Text>Loading posts...</Text>}
-      <FlatList
-        data={posts}
-        keyExtractor={(post) => post.id}
-        renderItem={({ item }) => <PostListing post={item} />}
-      />
+      <Text>Create T3 App (Monorepo Version)</Text>
+      <Text>Examples</Text>
+      <ExamplesView />
+      <ExampleCreator />
     </SafeAreaView>
   );
 };
-
-export default HomeScreen;
