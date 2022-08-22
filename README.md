@@ -1,5 +1,7 @@
 # TENTS
 
+**ARCHIVED. Please checkout [juliusmarminge/create-t3-turbo](https://github.com/juliusmarminge/create-t3-turbo) instead.**
+
 Turbo-Expo-Next-TRPC-Starter
 
 This is a starter repo to get started with Expo and tRPC in Turborepo.
